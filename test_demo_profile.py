@@ -295,6 +295,25 @@ async def test_extraction_returns_candidates_only_and_preserves_exact_source_tex
 
 
 @pytest.mark.asyncio
+async def test_extraction_requests_json_output_for_a_message_without_candidates(api_client):
+    with patch("app.client") as llm:
+        llm.chat.completions.create.return_value.choices[0].message.content = json.dumps(
+            {"candidates": []}
+        )
+
+        response = await api_client.post(
+            "/profile/extract",
+            json={"message": "predict"},
+        )
+
+    assert response.status_code == 200
+    assert response.json() == {"candidates": []}
+    request = llm.chat.completions.create.call_args.kwargs
+    assert request["response_format"] == {"type": "json_object"}
+    assert '{"candidates": []}' in request["messages"][0]["content"]
+
+
+@pytest.mark.asyncio
 async def test_profile_contract_validates_then_requires_a_separate_confirm_call(api_client):
     candidates = [
         candidate("height", 180, "cm", "height 180 cm"),

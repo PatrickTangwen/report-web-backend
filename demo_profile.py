@@ -23,6 +23,8 @@ Allowed operations are `set`, `correct`, and `remove`. Copy `source_text` exactl
 the visitor message. Use a unit only when it is explicit in that exact source text.
 Do not validate, normalize, calculate, infer missing values, confirm a profile, match a
 cohort, infer sex, or generate ICD codes. Preserve unsupported fields as candidates.
+If the message contains no profile field, including a request such as "predict", return
+exactly {"candidates": []}.
 Return JSON only.
 """
 

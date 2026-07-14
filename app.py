@@ -260,6 +260,7 @@ async def profile_extract(req: ProfileExtractRequest, request: Request):
             model="deepseek-chat",
             max_tokens=900,
             temperature=0,
+            response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": FEATURE_EXTRACTION_SYSTEM_PROMPT},
                 {"role": "user", "content": req.message},
