@@ -1,0 +1,281 @@
+disease,pathway,source,gene_count,enrichment_ratio,p_value,p_adjusted,rank
+CKD,Collagen metabolic process,GO_BP,50,2.93,2.01e-08,1.04e-07,1
+CKD,mTOR signaling pathway,KEGG,8,1.85,1.07e-07,4.54e-07,2
+CKD,Response to oxidative stress,GO_BP,36,3.03,1.41e-07,8.28e-07,3
+CKD,Wound healing,GO_BP,40,4.55,1.25e-07,1.40e-06,4
+CKD,Toll-like receptor signaling pathway,KEGG,22,1.41,6.55e-07,1.19e-06,5
+CKD,JAK-STAT signaling pathway,KEGG,36,1.72,6.48e-08,1.93e-06,6
+CKD,Signaling by PDGF,Reactome,14,1.67,1.31e-06,2.46e-05,7
+CKD,Oxidative phosphorylation,KEGG,23,3.47,4.18e-07,3.21e-06,8
+CKD,Inflammatory response,GO_BP,27,4.06,2.73e-06,1.35e-05,9
+CKD,Cytokine-cytokine receptor interaction,KEGG,9,3.35,9.31e-06,2.98e-05,10
+CKD,ECM-receptor interaction,KEGG,9,1.98,2.36e-05,6.33e-05,11
+CKD,NF-kappa B signaling pathway,KEGG,5,2.21,4.57e-05,7.16e-05,12
+CKD,Cell cycle,KEGG,10,2.2,2.61e-05,2.58e-04,13
+CKD,Cell proliferation,GO_BP,8,2.54,7.18e-06,1.57e-04,14
+CKD,PI3K-Akt signaling pathway,KEGG,29,1.82,4.83e-05,1.42e-04,15
+CKD,Immune response,GO_BP,31,3.96,3.30e-05,2.38e-04,16
+CKD,Signaling by TGF-beta,Reactome,30,1.62,4.40e-05,2.05e-04,17
+CKD,Notch signaling pathway,KEGG,30,2.62,1.13e-04,3.68e-04,18
+CKD,p53 signaling pathway,KEGG,36,2.64,1.50e-04,2.01e-03,19
+CKD,Wnt signaling pathway,KEGG,5,3.36,2.06e-04,1.20e-03,20
+CKD,Chemokine signaling pathway,KEGG,26,4.1,3.73e-04,2.20e-03,21
+CKD,MAPK signaling pathway,KEGG,27,1.64,1.76e-03,6.00e-03,22
+CKD,Signaling by Interleukins,Reactome,39,1.8,4.37e-03,8.58e-03,23
+CKD,Collagen fibril organization,GO_BP,32,3.27,6.35e-04,1.12e-02,24
+CKD,Angiogenesis,GO_BP,29,1.2,4.57e-04,1.46e-02,25
+CKD,Apoptosis,KEGG,15,4.68,7.99e-04,6.34e-03,26
+CKD,Regulation of complement cascade,Reactome,24,4.3,1.15e-02,3.32e-02,27
+CKD,Fibroblast proliferation,GO_BP,25,3.45,1.83e-03,4.68e-02,28
+CKD,TGF-beta signaling pathway,KEGG,7,1.28,5.56e-03,1.23e-02,29
+CKD,Signaling by VEGF,Reactome,22,3.27,2.51e-03,3.48e-02,30
+CKD,Degradation of ECM,Reactome,6,3.43,9.41e-03,2.29e-02,31
+CKD,Integrin cell surface interactions,Reactome,44,2.08,6.19e-04,1.92e-02,32
+CKD,Cell adhesion molecules,KEGG,32,4.01,2.96e-03,1.01e-01,33
+CKD,Extracellular matrix disassembly,Reactome,13,4.79,1.16e-02,1.96e-02,34
+CKD,MET activates RAS signaling,Reactome,25,2.61,9.01e-03,2.11e-02,35
+CKD,Collagen biosynthesis,Reactome,11,3.8,1.92e-02,3.80e-02,36
+CKD,Focal adhesion,KEGG,38,3.18,4.51e-03,3.62e-02,37
+CKD,Extracellular matrix organization,GO_BP,31,2.46,2.95e-02,1.96e-02,38
+CKD,Hippo signaling pathway,KEGG,17,1.83,1.71e-02,8.25e-02,39
+CKD,TNF signaling pathway,KEGG,39,1.73,2.64e-02,3.78e-01,40
+IPF,MET activates RAS signaling,Reactome,38,3.14,1.08e-08,1.11e-07,1
+IPF,Response to oxidative stress,GO_BP,29,2.17,1.02e-08,1.31e-07,2
+IPF,Degradation of ECM,Reactome,12,2.03,3.98e-08,3.83e-07,3
+IPF,Signaling by TGF-beta,Reactome,43,1.93,1.42e-07,3.76e-07,4
+IPF,Apoptosis,KEGG,32,1.43,1.10e-07,1.86e-07,5
+IPF,Collagen biosynthesis,Reactome,33,2.45,1.26e-07,8.09e-07,6
+IPF,NF-kappa B signaling pathway,KEGG,51,1.71,1.29e-07,6.64e-07,7
+IPF,Extracellular matrix organization,GO_BP,36,1.46,2.03e-07,1.09e-06,8
+IPF,Collagen fibril organization,GO_BP,19,4.56,6.93e-07,1.79e-06,9
+IPF,Integrin cell surface interactions,Reactome,15,1.22,2.00e-07,1.02e-06,10
+IPF,Chemokine signaling pathway,KEGG,22,3.84,8.51e-07,2.20e-06,11
+IPF,TNF signaling pathway,KEGG,49,3.62,5.88e-07,3.86e-06,12
+IPF,Collagen metabolic process,GO_BP,19,3.75,5.66e-07,2.08e-05,13
+IPF,Cell proliferation,GO_BP,39,1.71,5.51e-06,9.85e-06,14
+IPF,Regulation of complement cascade,Reactome,12,1.16,3.91e-06,3.47e-05,15
+IPF,Signaling by Interleukins,Reactome,7,1.29,2.85e-06,1.90e-05,16
+IPF,p53 signaling pathway,KEGG,29,3.34,9.63e-06,2.54e-05,17
+IPF,Extracellular matrix disassembly,Reactome,26,1.43,3.82e-06,6.71e-05,18
+IPF,ECM-receptor interaction,KEGG,23,1.12,1.81e-05,3.72e-05,19
+IPF,TGF-beta signaling pathway,KEGG,32,3.09,3.40e-05,5.31e-05,20
+IPF,Focal adhesion,KEGG,10,3.66,2.31e-05,8.41e-05,21
+IPF,Oxidative phosphorylation,KEGG,33,3.39,1.17e-05,2.13e-04,22
+IPF,Signaling by PDGF,Reactome,39,3.7,2.03e-05,2.63e-04,23
+IPF,Immune response,GO_BP,34,2.99,1.23e-04,8.86e-04,24
+IPF,MAPK signaling pathway,KEGG,33,3.4,2.12e-05,9.08e-04,25
+IPF,Wnt signaling pathway,KEGG,33,1.53,4.72e-04,6.47e-04,26
+IPF,Signaling by VEGF,Reactome,46,4.59,1.24e-04,7.91e-04,27
+IPF,Cell adhesion molecules,KEGG,30,3.52,1.82e-04,1.09e-03,28
+IPF,Wound healing,GO_BP,5,1.45,1.72e-04,7.27e-04,29
+IPF,mTOR signaling pathway,KEGG,31,2.69,9.90e-04,2.04e-03,30
+IPF,Angiogenesis,GO_BP,10,2.98,2.58e-04,9.39e-04,31
+IPF,Toll-like receptor signaling pathway,KEGG,20,1.53,2.29e-03,6.78e-03,32
+IPF,Cytokine-cytokine receptor interaction,KEGG,29,1.46,2.71e-03,1.15e-02,33
+IPF,Fibroblast proliferation,GO_BP,15,3.76,4.13e-04,1.19e-02,34
+IPF,Notch signaling pathway,KEGG,28,2.22,2.93e-03,3.05e-02,35
+IPF,Hippo signaling pathway,KEGG,17,4.16,2.53e-03,7.00e-03,36
+IPF,Inflammatory response,GO_BP,9,3.46,4.34e-03,4.93e-02,37
+IPF,PI3K-Akt signaling pathway,KEGG,35,1.95,9.19e-04,1.52e-01,38
+IPF,Cell cycle,KEGG,26,4.48,1.30e-03,4.34e-02,39
+IPF,JAK-STAT signaling pathway,KEGG,31,1.86,2.93e-02,1.14e-01,40
+NASH,Immune response,GO_BP,16,3.39,2.67e-08,1.43e-07,1
+NASH,Apoptosis,KEGG,26,3.17,4.57e-08,5.67e-08,2
+NASH,Angiogenesis,GO_BP,15,1.47,4.26e-08,7.64e-08,3
+NASH,Signaling by VEGF,Reactome,39,3.7,1.02e-07,1.03e-07,4
+NASH,Integrin cell surface interactions,Reactome,20,1.2,9.12e-08,1.06e-06,5
+NASH,Signaling by TGF-beta,Reactome,25,1.8,1.57e-07,1.33e-06,6
+NASH,Chemokine signaling pathway,KEGG,23,2.99,9.89e-07,5.42e-06,7
+NASH,Degradation of ECM,Reactome,35,2.13,2.21e-06,4.71e-06,8
+NASH,Signaling by PDGF,Reactome,10,4.85,2.54e-06,5.92e-06,9
+NASH,Cell proliferation,GO_BP,41,2.94,2.63e-06,2.74e-06,10
+NASH,p53 signaling pathway,KEGG,21,3.42,7.56e-07,2.81e-06,11
+NASH,JAK-STAT signaling pathway,KEGG,21,1.22,4.27e-06,1.26e-05,12
+NASH,TNF signaling pathway,KEGG,20,3.91,1.67e-06,6.54e-06,13
+NASH,NF-kappa B signaling pathway,KEGG,11,1.36,3.41e-05,3.26e-06,14
+NASH,Collagen fibril organization,GO_BP,32,4.44,2.12e-06,2.50e-05,15
+NASH,Notch signaling pathway,KEGG,7,3.83,2.42e-06,3.33e-05,16
+NASH,mTOR signaling pathway,KEGG,11,2.59,8.75e-06,2.65e-05,17
+NASH,Signaling by Interleukins,Reactome,46,3.27,2.63e-06,3.66e-05,18
+NASH,MET activates RAS signaling,Reactome,23,5.01,1.63e-05,2.36e-05,19
+NASH,Wnt signaling pathway,KEGG,40,1.62,1.57e-05,1.25e-04,20
+NASH,Collagen biosynthesis,Reactome,40,4.52,5.65e-05,3.64e-04,21
+NASH,Cytokine-cytokine receptor interaction,KEGG,31,1.33,3.52e-05,1.98e-04,22
+NASH,Extracellular matrix organization,GO_BP,11,4.56,7.21e-05,5.95e-05,23
+NASH,Extracellular matrix disassembly,Reactome,5,2.09,3.10e-04,1.93e-04,24
+NASH,TGF-beta signaling pathway,KEGG,37,4.74,1.30e-04,4.37e-04,25
+NASH,Regulation of complement cascade,Reactome,10,4.5,4.29e-05,2.22e-04,26
+NASH,Fibroblast proliferation,GO_BP,26,3.19,5.44e-04,1.11e-02,27
+NASH,Collagen metabolic process,GO_BP,27,3.57,1.41e-04,6.02e-03,28
+NASH,Hippo signaling pathway,KEGG,46,2.73,1.12e-03,7.32e-03,29
+NASH,Toll-like receptor signaling pathway,KEGG,19,2.14,2.46e-03,1.62e-02,30
+NASH,MAPK signaling pathway,KEGG,34,1.37,2.87e-03,6.95e-03,31
+NASH,PI3K-Akt signaling pathway,KEGG,36,2.83,7.81e-03,2.65e-02,32
+NASH,Response to oxidative stress,GO_BP,38,2.98,1.14e-02,6.88e-03,33
+NASH,Cell adhesion molecules,KEGG,12,1.57,3.06e-03,6.56e-03,34
+NASH,ECM-receptor interaction,KEGG,7,2.98,4.92e-03,2.55e-02,35
+NASH,Oxidative phosphorylation,KEGG,38,3.33,3.15e-03,3.10e-02,36
+NASH,Wound healing,GO_BP,37,4.18,4.50e-02,2.33e-01,37
+NASH,Inflammatory response,GO_BP,20,1.96,1.75e-02,6.77e-02,38
+NASH,Cell cycle,KEGG,6,3.6,2.20e-02,1.62e-01,39
+NASH,Focal adhesion,KEGG,15,1.82,2.95e-02,1.16e-01,40
+Pulmonary Fibrosis,Toll-like receptor signaling pathway,KEGG,35,1.61,1.66e-08,1.35e-08,1
+Pulmonary Fibrosis,Cell adhesion molecules,KEGG,29,4.72,1.14e-08,4.68e-08,2
+Pulmonary Fibrosis,Angiogenesis,GO_BP,16,3.9,1.80e-08,3.58e-08,3
+Pulmonary Fibrosis,MET activates RAS signaling,Reactome,35,3.04,1.22e-08,5.77e-08,4
+Pulmonary Fibrosis,Focal adhesion,KEGG,7,3.87,2.22e-07,8.07e-08,5
+Pulmonary Fibrosis,Inflammatory response,GO_BP,34,1.33,7.12e-08,1.58e-06,6
+Pulmonary Fibrosis,NF-kappa B signaling pathway,KEGG,28,3.09,1.94e-07,7.06e-07,7
+Pulmonary Fibrosis,Signaling by TGF-beta,Reactome,20,3.21,8.09e-08,1.06e-06,8
+Pulmonary Fibrosis,Notch signaling pathway,KEGG,12,3.66,3.63e-07,8.49e-07,9
+Pulmonary Fibrosis,Response to oxidative stress,GO_BP,10,2.04,7.09e-08,9.13e-07,10
+Pulmonary Fibrosis,MAPK signaling pathway,KEGG,16,1.85,2.49e-07,2.51e-06,11
+Pulmonary Fibrosis,Fibroblast proliferation,GO_BP,10,1.27,2.45e-07,1.17e-06,12
+Pulmonary Fibrosis,Oxidative phosphorylation,KEGG,5,2.86,1.95e-07,5.20e-07,13
+Pulmonary Fibrosis,Cytokine-cytokine receptor interaction,KEGG,14,1.8,6.88e-07,1.61e-06,14
+Pulmonary Fibrosis,Chemokine signaling pathway,KEGG,23,2.55,5.69e-07,1.74e-06,15
+Pulmonary Fibrosis,Degradation of ECM,Reactome,21,1.82,3.26e-07,8.92e-06,16
+Pulmonary Fibrosis,mTOR signaling pathway,KEGG,47,1.49,2.62e-07,4.30e-06,17
+Pulmonary Fibrosis,TGF-beta signaling pathway,KEGG,20,3.64,2.72e-07,2.97e-06,18
+Pulmonary Fibrosis,TNF signaling pathway,KEGG,23,3.19,3.03e-06,1.83e-05,19
+Pulmonary Fibrosis,Cell proliferation,GO_BP,30,2.99,9.41e-06,1.76e-05,20
+Pulmonary Fibrosis,Signaling by PDGF,Reactome,14,1.98,1.08e-05,3.02e-05,21
+Pulmonary Fibrosis,JAK-STAT signaling pathway,KEGG,8,4.6,4.23e-06,1.16e-04,22
+Pulmonary Fibrosis,Regulation of complement cascade,Reactome,5,3.39,6.93e-06,2.17e-05,23
+Pulmonary Fibrosis,ECM-receptor interaction,KEGG,42,2.9,2.87e-05,1.08e-04,24
+Pulmonary Fibrosis,Signaling by Interleukins,Reactome,39,3.64,1.65e-05,1.42e-04,25
+Pulmonary Fibrosis,p53 signaling pathway,KEGG,44,4.0,9.17e-05,7.97e-05,26
+Pulmonary Fibrosis,PI3K-Akt signaling pathway,KEGG,31,4.86,1.67e-04,1.15e-04,27
+Pulmonary Fibrosis,Integrin cell surface interactions,Reactome,10,3.47,8.06e-04,3.15e-03,28
+Pulmonary Fibrosis,Immune response,GO_BP,39,1.38,2.98e-04,9.21e-03,29
+Pulmonary Fibrosis,Cell cycle,KEGG,26,3.08,8.58e-04,1.55e-03,30
+Pulmonary Fibrosis,Collagen biosynthesis,Reactome,8,3.96,8.23e-04,1.14e-02,31
+Pulmonary Fibrosis,Wound healing,GO_BP,23,1.46,1.05e-03,5.26e-03,32
+Pulmonary Fibrosis,Hippo signaling pathway,KEGG,36,1.65,1.70e-03,6.03e-03,33
+Pulmonary Fibrosis,Collagen metabolic process,GO_BP,16,1.33,1.35e-03,1.48e-02,34
+Pulmonary Fibrosis,Extracellular matrix organization,GO_BP,9,3.76,1.13e-02,1.23e-02,35
+Pulmonary Fibrosis,Extracellular matrix disassembly,Reactome,42,1.79,2.35e-03,2.08e-02,36
+Pulmonary Fibrosis,Wnt signaling pathway,KEGG,22,2.59,7.11e-03,4.27e-02,37
+Pulmonary Fibrosis,Apoptosis,KEGG,16,4.7,2.53e-02,4.98e-02,38
+Pulmonary Fibrosis,Signaling by VEGF,Reactome,10,1.7,6.80e-03,1.14e-01,39
+Pulmonary Fibrosis,Collagen fibril organization,GO_BP,28,3.99,2.92e-02,2.07e-01,40
+SSc_Connective_Tissue,Angiogenesis,GO_BP,12,3.74,1.34e-08,2.45e-08,1
+SSc_Connective_Tissue,Cell proliferation,GO_BP,29,3.13,4.19e-08,2.72e-07,2
+SSc_Connective_Tissue,Wnt signaling pathway,KEGG,40,3.32,1.25e-08,7.81e-07,3
+SSc_Connective_Tissue,TNF signaling pathway,KEGG,26,3.65,2.85e-08,8.30e-07,4
+SSc_Connective_Tissue,Hippo signaling pathway,KEGG,17,2.01,1.05e-07,6.50e-07,5
+SSc_Connective_Tissue,mTOR signaling pathway,KEGG,17,2.23,1.34e-07,2.09e-06,6
+SSc_Connective_Tissue,Integrin cell surface interactions,Reactome,30,1.57,1.23e-07,9.27e-07,7
+SSc_Connective_Tissue,Regulation of complement cascade,Reactome,41,2.4,3.87e-07,3.06e-06,8
+SSc_Connective_Tissue,JAK-STAT signaling pathway,KEGG,40,3.27,6.21e-07,2.68e-06,9
+SSc_Connective_Tissue,Cell adhesion molecules,KEGG,33,2.32,8.38e-07,2.76e-06,10
+SSc_Connective_Tissue,Toll-like receptor signaling pathway,KEGG,22,1.79,1.88e-06,2.82e-06,11
+SSc_Connective_Tissue,TGF-beta signaling pathway,KEGG,28,1.8,2.64e-07,9.45e-06,12
+SSc_Connective_Tissue,PI3K-Akt signaling pathway,KEGG,35,3.43,6.45e-07,1.23e-05,13
+SSc_Connective_Tissue,Signaling by VEGF,Reactome,20,3.8,1.16e-06,2.28e-05,14
+SSc_Connective_Tissue,Wound healing,GO_BP,22,4.55,6.92e-07,1.51e-05,15
+SSc_Connective_Tissue,Apoptosis,KEGG,6,3.35,7.99e-06,5.87e-06,16
+SSc_Connective_Tissue,Signaling by PDGF,Reactome,22,4.13,8.28e-06,7.55e-06,17
+SSc_Connective_Tissue,Response to oxidative stress,GO_BP,42,1.2,2.88e-05,6.74e-05,18
+SSc_Connective_Tissue,Immune response,GO_BP,16,1.4,4.70e-05,9.93e-05,19
+SSc_Connective_Tissue,Signaling by TGF-beta,Reactome,44,1.27,2.47e-05,4.31e-05,20
+SSc_Connective_Tissue,Signaling by Interleukins,Reactome,25,2.54,3.66e-05,1.93e-04,21
+SSc_Connective_Tissue,Fibroblast proliferation,GO_BP,29,2.22,1.18e-04,1.44e-04,22
+SSc_Connective_Tissue,p53 signaling pathway,KEGG,24,1.78,2.21e-05,5.64e-04,23
+SSc_Connective_Tissue,MAPK signaling pathway,KEGG,32,3.73,4.14e-05,4.86e-04,24
+SSc_Connective_Tissue,Focal adhesion,KEGG,6,2.84,1.53e-04,4.41e-04,25
+SSc_Connective_Tissue,Chemokine signaling pathway,KEGG,40,2.71,3.98e-04,4.90e-04,26
+SSc_Connective_Tissue,Oxidative phosphorylation,KEGG,14,3.52,7.78e-04,9.41e-03,27
+SSc_Connective_Tissue,Cytokine-cytokine receptor interaction,KEGG,38,3.93,1.03e-03,2.05e-02,28
+SSc_Connective_Tissue,Notch signaling pathway,KEGG,43,4.1,6.13e-03,1.16e-02,29
+SSc_Connective_Tissue,Extracellular matrix disassembly,Reactome,37,4.45,5.34e-03,3.22e-02,30
+SSc_Connective_Tissue,Collagen biosynthesis,Reactome,26,1.86,5.11e-02,3.29e-02,31
+SSc_Connective_Tissue,Cell cycle,KEGG,24,2.23,1.04e-02,6.96e-02,32
+SSc_Connective_Tissue,Collagen metabolic process,GO_BP,6,2.39,9.16e-02,4.20e-02,33
+SSc_Connective_Tissue,NF-kappa B signaling pathway,KEGG,26,3.16,8.84e-03,2.10e-02,34
+SSc_Connective_Tissue,Degradation of ECM,Reactome,28,4.05,1.19e-01,1.49e-01,35
+SSc_Connective_Tissue,MET activates RAS signaling,Reactome,15,2.06,3.19e-03,1.42e-01,36
+SSc_Connective_Tissue,Collagen fibril organization,GO_BP,11,1.34,8.49e-03,1.96e-01,37
+SSc_Connective_Tissue,Extracellular matrix organization,GO_BP,28,1.96,1.31e-02,1.57e+00,38
+SSc_Connective_Tissue,Inflammatory response,GO_BP,35,1.93,3.20e-02,1.54e-01,39
+SSc_Connective_Tissue,ECM-receptor interaction,KEGG,10,2.99,4.61e-02,2.63e-01,40
+Crohns_Disease,mTOR signaling pathway,KEGG,13,2.85,1.24e-08,4.30e-08,1
+Crohns_Disease,Cytokine-cytokine receptor interaction,KEGG,26,3.23,1.33e-08,5.12e-08,2
+Crohns_Disease,Signaling by VEGF,Reactome,5,1.77,2.97e-08,1.13e-07,3
+Crohns_Disease,MET activates RAS signaling,Reactome,51,2.84,3.15e-08,8.08e-08,4
+Crohns_Disease,Apoptosis,KEGG,41,2.45,7.52e-08,5.25e-07,5
+Crohns_Disease,Cell proliferation,GO_BP,28,3.26,2.55e-08,2.74e-07,6
+Crohns_Disease,Chemokine signaling pathway,KEGG,41,1.31,3.71e-08,4.77e-07,7
+Crohns_Disease,Signaling by PDGF,Reactome,36,2.82,3.19e-08,9.18e-07,8
+Crohns_Disease,JAK-STAT signaling pathway,KEGG,43,3.46,9.22e-08,1.10e-06,9
+Crohns_Disease,Collagen metabolic process,GO_BP,31,2.08,1.64e-07,3.89e-07,10
+Crohns_Disease,Signaling by TGF-beta,Reactome,12,4.48,2.66e-07,2.07e-06,11
+Crohns_Disease,Cell adhesion molecules,KEGG,25,1.57,1.13e-07,2.19e-06,12
+Crohns_Disease,Hippo signaling pathway,KEGG,27,2.18,1.48e-07,2.52e-06,13
+Crohns_Disease,Extracellular matrix organization,GO_BP,11,4.28,5.74e-07,4.60e-06,14
+Crohns_Disease,TNF signaling pathway,KEGG,29,3.83,8.70e-06,6.07e-06,15
+Crohns_Disease,Fibroblast proliferation,GO_BP,29,2.08,1.75e-05,4.57e-05,16
+Crohns_Disease,Oxidative phosphorylation,KEGG,54,3.11,4.43e-05,7.39e-05,17
+Crohns_Disease,Degradation of ECM,Reactome,32,1.58,4.28e-06,1.04e-04,18
+Crohns_Disease,Angiogenesis,GO_BP,8,2.36,1.00e-05,1.94e-04,19
+Crohns_Disease,MAPK signaling pathway,KEGG,13,2.58,1.94e-05,1.94e-04,20
+Crohns_Disease,TGF-beta signaling pathway,KEGG,17,3.52,1.80e-05,2.89e-04,21
+Crohns_Disease,PI3K-Akt signaling pathway,KEGG,12,1.97,6.27e-05,1.19e-04,22
+Crohns_Disease,Immune response,GO_BP,43,2.2,1.01e-04,2.95e-04,23
+Crohns_Disease,Toll-like receptor signaling pathway,KEGG,20,2.92,1.05e-03,3.87e-04,24
+Crohns_Disease,Integrin cell surface interactions,Reactome,14,3.88,3.19e-04,1.56e-03,25
+Crohns_Disease,Wnt signaling pathway,KEGG,34,3.33,1.44e-03,1.79e-03,26
+Crohns_Disease,Cell cycle,KEGG,38,3.44,1.53e-03,4.27e-03,27
+Crohns_Disease,Collagen fibril organization,GO_BP,8,1.49,1.45e-03,9.76e-03,28
+Crohns_Disease,Signaling by Interleukins,Reactome,7,1.95,2.29e-03,3.84e-02,29
+Crohns_Disease,Wound healing,GO_BP,29,1.41,1.42e-03,5.57e-03,30
+Crohns_Disease,Regulation of complement cascade,Reactome,12,1.94,2.51e-03,2.00e-02,31
+Crohns_Disease,p53 signaling pathway,KEGG,7,3.21,1.11e-03,1.74e-02,32
+Crohns_Disease,Collagen biosynthesis,Reactome,6,4.39,4.47e-03,1.37e-02,33
+Crohns_Disease,Extracellular matrix disassembly,Reactome,18,2.75,6.26e-03,2.59e-02,34
+Crohns_Disease,NF-kappa B signaling pathway,KEGG,37,4.17,4.70e-03,2.73e-02,35
+Crohns_Disease,Response to oxidative stress,GO_BP,27,2.15,1.26e-02,4.05e-02,36
+Crohns_Disease,Focal adhesion,KEGG,33,3.58,1.04e-02,1.92e-02,37
+Crohns_Disease,Notch signaling pathway,KEGG,23,2.98,1.43e-02,6.45e-02,38
+Crohns_Disease,ECM-receptor interaction,KEGG,34,2.15,2.04e-02,1.68e-01,39
+Crohns_Disease,Inflammatory response,GO_BP,34,3.71,6.61e-03,5.35e-02,40
+Fibrosis_of_Skin,Integrin cell surface interactions,Reactome,7,3.93,2.28e-08,2.39e-08,1
+Fibrosis_of_Skin,Cell cycle,KEGG,32,3.45,3.32e-08,6.96e-08,2
+Fibrosis_of_Skin,TNF signaling pathway,KEGG,6,2.04,1.02e-07,2.87e-07,3
+Fibrosis_of_Skin,Signaling by TGF-beta,Reactome,23,1.71,2.32e-08,5.89e-07,4
+Fibrosis_of_Skin,ECM-receptor interaction,KEGG,11,3.07,2.38e-07,3.80e-07,5
+Fibrosis_of_Skin,Wnt signaling pathway,KEGG,22,2.3,5.77e-08,1.28e-06,6
+Fibrosis_of_Skin,Signaling by PDGF,Reactome,6,2.71,2.65e-07,1.14e-06,7
+Fibrosis_of_Skin,Signaling by VEGF,Reactome,19,2.29,1.20e-07,1.07e-06,8
+Fibrosis_of_Skin,Signaling by Interleukins,Reactome,34,1.66,2.48e-07,1.11e-06,9
+Fibrosis_of_Skin,Extracellular matrix disassembly,Reactome,9,1.8,1.97e-06,5.38e-07,10
+Fibrosis_of_Skin,Collagen biosynthesis,Reactome,10,4.28,1.96e-06,4.31e-06,11
+Fibrosis_of_Skin,Fibroblast proliferation,GO_BP,27,2.23,4.93e-07,6.92e-06,12
+Fibrosis_of_Skin,Immune response,GO_BP,11,2.96,6.07e-07,1.97e-05,13
+Fibrosis_of_Skin,Regulation of complement cascade,Reactome,40,2.72,6.15e-07,2.89e-06,14
+Fibrosis_of_Skin,p53 signaling pathway,KEGG,24,4.3,8.63e-07,1.91e-05,15
+Fibrosis_of_Skin,Collagen fibril organization,GO_BP,10,3.34,1.15e-06,1.40e-05,16
+Fibrosis_of_Skin,MET activates RAS signaling,Reactome,41,3.07,5.24e-06,8.11e-06,17
+Fibrosis_of_Skin,Cytokine-cytokine receptor interaction,KEGG,11,2.29,3.95e-06,1.04e-05,18
+Fibrosis_of_Skin,Response to oxidative stress,GO_BP,33,2.41,1.48e-05,1.37e-04,19
+Fibrosis_of_Skin,Apoptosis,KEGG,18,3.53,2.08e-05,1.43e-04,20
+Fibrosis_of_Skin,MAPK signaling pathway,KEGG,34,2.38,6.38e-06,2.07e-04,21
+Fibrosis_of_Skin,Chemokine signaling pathway,KEGG,27,2.44,1.27e-05,8.87e-05,22
+Fibrosis_of_Skin,Cell adhesion molecules,KEGG,34,1.58,2.39e-05,6.09e-05,23
+Fibrosis_of_Skin,Wound healing,GO_BP,24,2.82,2.86e-05,2.81e-05,24
+Fibrosis_of_Skin,Inflammatory response,GO_BP,12,2.57,7.02e-05,1.87e-04,25
+Fibrosis_of_Skin,Focal adhesion,KEGG,46,1.87,9.08e-04,1.40e-03,26
+Fibrosis_of_Skin,Oxidative phosphorylation,KEGG,15,1.74,2.76e-04,4.25e-03,27
+Fibrosis_of_Skin,PI3K-Akt signaling pathway,KEGG,19,2.71,1.05e-03,2.47e-03,28
+Fibrosis_of_Skin,TGF-beta signaling pathway,KEGG,20,2.03,8.17e-04,2.26e-03,29
+Fibrosis_of_Skin,Degradation of ECM,Reactome,12,1.94,7.26e-04,7.52e-03,30
+Fibrosis_of_Skin,Notch signaling pathway,KEGG,14,3.6,8.53e-04,1.03e-02,31
+Fibrosis_of_Skin,Cell proliferation,GO_BP,29,3.23,2.31e-02,2.30e-02,32
+Fibrosis_of_Skin,mTOR signaling pathway,KEGG,18,4.29,2.73e-03,1.45e-01,33
+Fibrosis_of_Skin,JAK-STAT signaling pathway,KEGG,17,2.08,1.00e-02,3.60e-02,34
+Fibrosis_of_Skin,Toll-like receptor signaling pathway,KEGG,26,2.86,2.56e-02,5.83e-02,35
+Fibrosis_of_Skin,Collagen metabolic process,GO_BP,23,3.5,2.84e-03,8.61e-02,36
+Fibrosis_of_Skin,Hippo signaling pathway,KEGG,12,1.93,6.30e-02,4.73e-01,37
+Fibrosis_of_Skin,Extracellular matrix organization,GO_BP,42,1.18,2.06e-02,4.13e-02,38
+Fibrosis_of_Skin,NF-kappa B signaling pathway,KEGG,30,4.01,3.46e-02,3.93e-01,39
+Fibrosis_of_Skin,Angiogenesis,GO_BP,26,4.27,4.24e-02,4.61e-01,40

@@ -1,0 +1,81 @@
+{
+  "version": "2026-07-13.v1",
+  "review_status": "researcher-reviewed",
+  "icd_version": "ICD-10 2019",
+  "source": {
+    "name": "WHO ICD-10 2019 Browser",
+    "url": "https://icd.who.int/browse10/2019/en"
+  },
+  "entries": [
+    {
+      "id": "tuberculosis",
+      "canonical_keyword": "tuberculosis",
+      "aliases": ["tb"],
+      "display_label": "Tuberculosis",
+      "selector": {"type": "range", "start": "A15", "end": "A19"},
+      "selector_label": "A15-A19",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    },
+    {
+      "id": "diabetes-mellitus",
+      "canonical_keyword": "diabetes mellitus",
+      "aliases": ["diabetes"],
+      "display_label": "Diabetes mellitus",
+      "selector": {"type": "range", "start": "E10", "end": "E14"},
+      "selector_label": "E10-E14",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    },
+    {
+      "id": "type-2-diabetes",
+      "canonical_keyword": "type 2 diabetes",
+      "aliases": ["type ii diabetes", "t2d"],
+      "display_label": "Type 2 diabetes mellitus",
+      "selector": {"type": "exact", "code": "E11"},
+      "selector_label": "E11",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    },
+    {
+      "id": "essential-hypertension",
+      "canonical_keyword": "essential hypertension",
+      "aliases": ["hypertension", "high blood pressure"],
+      "display_label": "Essential (primary) hypertension",
+      "selector": {"type": "exact", "code": "I10"},
+      "selector_label": "I10",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    },
+    {
+      "id": "pulmonary-fibrosis",
+      "canonical_keyword": "pulmonary fibrosis",
+      "aliases": ["lung fibrosis"],
+      "display_label": "Other interstitial pulmonary diseases",
+      "selector": {"type": "prefix", "prefix": "J84"},
+      "selector_label": "J84*",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    },
+    {
+      "id": "chronic-kidney-disease",
+      "canonical_keyword": "chronic kidney disease",
+      "aliases": ["ckd", "chronic renal disease"],
+      "display_label": "Chronic kidney disease",
+      "selector": {"type": "prefix", "prefix": "N18"},
+      "selector_label": "N18*",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    },
+    {
+      "id": "crohn-disease",
+      "canonical_keyword": "crohn disease",
+      "aliases": ["crohn's disease", "crohns disease"],
+      "display_label": "Crohn disease",
+      "selector": {"type": "prefix", "prefix": "K50"},
+      "selector_label": "K50*",
+      "source": "WHO ICD-10 2019 Browser",
+      "icd_version": "ICD-10 2019"
+    }
+  ]
+}

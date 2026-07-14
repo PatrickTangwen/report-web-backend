@@ -1,0 +1,26 @@
+{
+  "dataset_version": "fibrotic-2026-07-13-9d04ee36876b",
+  "preset_id": "pulmonary-fibrosis-walkthrough",
+  "label": "Pulmonary fibrosis display preset",
+  "target": "Pulmonary_fibrosis",
+  "display_mode": "overview",
+  "visual_reference_ids": [
+    "vr_F4zhusmmoOGRF7i_oSJJnZjs",
+    "vr_o4qPwokQ1QOr0-7tDzxr3mvy",
+    "vr_S23rxZhkIoWfYRrJMMlH5zDA",
+    "vr_8EHCcqkookDaPB6QGaFazncp",
+    "vr_0dpu3TMeyNf-xR-45u2uEX8b",
+    "vr_p64qWTUZsrnJNFbvaLkSjTdz",
+    "vr_eKfxvHm-6B766N-HM4wHlvdt",
+    "vr_mrc_-NESTVePPSb9tjuVIbPT",
+    "vr_KzljyvZ7SwCEsi4bn3YSkGq5",
+    "vr_h5-pf_vsbN0XoCeY83l7bhTz",
+    "vr_rdUCxySI4cSXZZejZCt_l1dQ",
+    "vr_eoPB8VK_oCIOBIzj_lNKYWdY"
+  ],
+  "summary": {
+    "reference_count": 12,
+    "title": "Pulmonary fibrosis display preset",
+    "description": "A fixed set of reference points selected independently of the t-SNE layout to demonstrate the visualization. It is not a clinical similarity result or personal assessment."
+  }
+}
