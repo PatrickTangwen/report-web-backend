@@ -344,43 +344,61 @@ def _coverage_recommendation(available_domains, eligible_patterns):
     }
 
 
-def match_confirmed_profile(confirmed_profile, target, rows, calibration, dataset_version):
-    values = _profile_values(confirmed_profile)
+def evaluate_profile_coverage(profile, target, calibration):
+    """Target-aware Profile Coverage for a draft or confirmed profile.
+
+    Domain-based and deterministic. It reports which feature domains are
+    represented, whether the profile satisfies a reviewed eligible pattern
+    for the target, and — when it does not — the nearest optional additions
+    that would reach one. It never returns a completion percentage, match
+    accuracy, or confidence, and no single field is universally required.
+    Both the pre-confirmation coverage endpoint and match_confirmed_profile
+    call this, so review-time guidance and matching agree by construction.
+    """
+    values = _profile_values(profile)
     available_domains = [
         domain
         for domain, features in DOMAIN_FEATURES.items()
         if any(feature[0] in values for feature in features)
     ]
     pattern = "|".join(sorted(available_domains))
-    outside_support_domains = _outside_reference_support_domains(confirmed_profile)
     unavailable_domains = [
         domain for domain in DOMAIN_FEATURES if domain not in available_domains
     ]
-    target_calibration = calibration.get("targets", {}).get(target, {})
-    eligible_patterns = target_calibration.get("eligible_patterns", {})
+    eligible_patterns = calibration.get("targets", {}).get(target, {}).get(
+        "eligible_patterns", {}
+    )
     pattern_calibration = eligible_patterns.get(pattern)
-    if not pattern_calibration:
-        profile_coverage = {
-            "available_domains": available_domains,
-            "unavailable_domains": unavailable_domains,
-            "eligible": False,
-        }
-        if outside_support_domains:
-            profile_coverage["outside_reference_support_domains"] = (
-                outside_support_domains
-            )
-        recommendation = _coverage_recommendation(
-            available_domains,
-            eligible_patterns,
-        )
+    coverage = {
+        "available_domains": available_domains,
+        "unavailable_domains": unavailable_domains,
+        "eligible": bool(pattern_calibration),
+    }
+    if pattern_calibration:
+        coverage["calibration_pattern"] = pattern
+    else:
+        recommendation = _coverage_recommendation(available_domains, eligible_patterns)
         if recommendation:
-            profile_coverage["coverage_recommendation"] = recommendation
+            coverage["coverage_recommendation"] = recommendation
+    outside_support_domains = _outside_reference_support_domains(profile)
+    if outside_support_domains:
+        coverage["outside_reference_support_domains"] = outside_support_domains
+    return coverage, pattern_calibration
+
+
+def match_confirmed_profile(confirmed_profile, target, rows, calibration, dataset_version):
+    values = _profile_values(confirmed_profile)
+    coverage, pattern_calibration = evaluate_profile_coverage(
+        confirmed_profile, target, calibration
+    )
+    available_domains = coverage["available_domains"]
+    if not pattern_calibration:
         return {
             "dataset_version": dataset_version,
             "cohort_comparison_result": {
                 "status": "insufficient_profile_coverage",
                 "target": target,
-                "profile_coverage": profile_coverage,
+                "profile_coverage": coverage,
             },
             "visual_reference_ids": [],
             "aggregate_callout_data": None,
@@ -406,16 +424,7 @@ def match_confirmed_profile(confirmed_profile, target, rows, calibration, datase
     )
     if status == "no_stable_neighborhood":
         visual_reference_ids = []
-    profile_coverage = {
-        "available_domains": available_domains,
-        "unavailable_domains": unavailable_domains,
-        "eligible": True,
-        "calibration_pattern": pattern,
-    }
-    if outside_support_domains:
-        profile_coverage["outside_reference_support_domains"] = (
-            outside_support_domains
-        )
+    profile_coverage = coverage
     masking_stability = {
         key: pattern_calibration[key]
         for key in ("median_top5_overlap", "p10_top5_overlap")

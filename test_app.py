@@ -7,13 +7,17 @@ from httpx import ASGITransport, AsyncClient
 
 os.environ["LLM_Key_Deepseek"] = "test-key"
 
+from typing import get_args
+
 from app import (
     app,
+    ComparisonTarget,
     PAPER_QA_SYSTEM_PROMPT,
     CLINICAL_PROMPT,
     DATA_QUERY_SYSTEM_PROMPT,
     classify_intent,
 )
+from fibrotic_contract import TARGETS
 from paper_context import PAPER_TEXT
 from data_query import (
     format_data_context,
@@ -60,6 +64,12 @@ async def client():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as c:
         yield c
+
+
+# --- Contracts ---
+
+def test_comparison_target_literal_matches_the_approved_target_set():
+    assert set(get_args(ComparisonTarget)) == TARGETS
 
 
 # --- Health ---

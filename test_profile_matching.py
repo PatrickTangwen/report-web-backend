@@ -1,4 +1,5 @@
 from copy import deepcopy
+from pathlib import Path
 import csv
 import hashlib
 import json
@@ -12,10 +13,12 @@ from demo_profile import build_profile_draft, confirm_profile
 from calibrate_profile_matching import calibrate_matching
 from fibrotic_contract import MATCH_FIELDS, PUBLIC_FIELDS
 from profile_matching import (
+    evaluate_profile_coverage,
     match_confirmed_profile,
     read_matching_release,
     resolve_private_matching_path,
 )
+from synthetic_example_profiles import load_synthetic_example_profiles
 
 
 def candidate(field, value, unit=None, source=None):
@@ -706,6 +709,169 @@ def test_calibration_records_masking_stability_and_fifth_neighbor_thresholds():
     assert pattern["median_top5_overlap"] >= 0.6
     assert pattern["p10_top5_overlap"] >= 0.2
     assert 0 < pattern["distance_threshold"] <= 1
+
+
+def test_evaluate_profile_coverage_marks_a_reviewed_eligible_pattern():
+    draft = build_profile_draft(
+        [
+            candidate("age", 55, source="age 55"),
+            candidate("smoking_status", "former", source="former smoker"),
+        ]
+    )
+    calibration = {
+        "targets": {
+            "MASH": {
+                "eligible_patterns": {
+                    "demographics|lifestyle": {"distance_threshold": 0.1},
+                }
+            }
+        }
+    }
+
+    coverage, pattern_calibration = evaluate_profile_coverage(draft, "MASH", calibration)
+
+    assert coverage["eligible"] is True
+    assert coverage["calibration_pattern"] == "demographics|lifestyle"
+    assert coverage["available_domains"] == ["demographics", "lifestyle"]
+    assert "coverage_recommendation" not in coverage
+    assert pattern_calibration == {"distance_threshold": 0.1}
+
+
+def test_evaluate_profile_coverage_recommends_the_nearest_optional_additions():
+    draft = build_profile_draft([candidate("age", 55, source="age 55")])
+    calibration = {
+        "targets": {
+            "CKD": {
+                "eligible_patterns": {
+                    "demographics|lifestyle": {"distance_threshold": 0.2},
+                    "body_composition|demographics|lifestyle": {"distance_threshold": 0.1},
+                }
+            }
+        }
+    }
+
+    coverage, pattern_calibration = evaluate_profile_coverage(draft, "CKD", calibration)
+
+    assert coverage["eligible"] is False
+    assert pattern_calibration is None
+    assert coverage["available_domains"] == ["demographics"]
+    assert coverage["coverage_recommendation"]["missing_domains"] == ["lifestyle"]
+    assert coverage["coverage_recommendation"]["measurements_by_domain"] == {
+        "lifestyle": ["smoking status", "alcohol frequency"]
+    }
+
+
+def test_evaluate_profile_coverage_flags_outside_reference_support_domains():
+    # Age 32 is below the reference-support lower bound (33) but inside input
+    # bounds, so demographics is available and flagged as outside support.
+    draft = build_profile_draft(
+        [
+            candidate("age", 32, source="age 32"),
+            candidate("smoking_status", "former", source="former smoker"),
+        ]
+    )
+    calibration = {
+        "targets": {
+            "MASH": {
+                "eligible_patterns": {
+                    "demographics|lifestyle": {"distance_threshold": 0.1},
+                }
+            }
+        }
+    }
+
+    coverage, _ = evaluate_profile_coverage(draft, "MASH", calibration)
+
+    assert coverage["eligible"] is True
+    assert coverage["outside_reference_support_domains"] == ["demographics"]
+
+
+def test_every_synthetic_example_is_eligible_under_the_committed_calibration():
+    calibration = json.loads(
+        (Path(__file__).parent / "data" / "fibrotic_matching_calibration.json").read_text()
+    )
+    profiles = load_synthetic_example_profiles()["profiles"]
+
+    for target, profile in profiles.items():
+        draft = build_profile_draft(profile["candidates"])
+        coverage, pattern_calibration = evaluate_profile_coverage(
+            draft, target, calibration
+        )
+        assert coverage["eligible"] is True, f"{target} example is not eligible: {coverage}"
+        assert pattern_calibration is not None
+
+
+def test_a_demographics_only_draft_is_ineligible_for_every_target():
+    # No single-domain pattern is eligible for any target, so an age-only draft
+    # must be blocked from comparison and offered an optional-addition path.
+    calibration = json.loads(
+        (Path(__file__).parent / "data" / "fibrotic_matching_calibration.json").read_text()
+    )
+    draft = build_profile_draft([candidate("age", 60, source="age 60")])
+
+    for target in load_synthetic_example_profiles()["profiles"]:
+        coverage, pattern_calibration = evaluate_profile_coverage(
+            draft, target, calibration
+        )
+        assert coverage["eligible"] is False, f"{target} unexpectedly eligible: {coverage}"
+        assert pattern_calibration is None
+        assert coverage["coverage_recommendation"]["missing_domains"], target
+
+
+@pytest.mark.asyncio
+async def test_coverage_endpoint_evaluates_draft_candidates_against_the_target(api_client):
+    release = {
+        "dataset_version": "fibrotic-test-release",
+        "rows": [],
+        "calibration": {
+            "targets": {
+                "CKD": {
+                    "eligible_patterns": {
+                        "demographics|lifestyle": {"distance_threshold": 0.2},
+                    }
+                }
+            }
+        },
+    }
+    app.dependency_overrides[get_profile_matching_release] = lambda: release
+    age_and_smoking = [
+        candidate("age", 55, source="age 55"),
+        candidate("smoking_status", "former", source="former smoker"),
+    ]
+
+    eligible = await api_client.post(
+        "/profile/coverage",
+        json={"candidates": age_and_smoking, "target": "CKD"},
+    )
+    ineligible = await api_client.post(
+        "/profile/coverage",
+        json={"candidates": [candidate("age", 55, source="age 55")], "target": "CKD"},
+    )
+    unsupported = await api_client.post(
+        "/profile/coverage",
+        json={"candidates": age_and_smoking, "target": "Diabetes"},
+    )
+
+    assert eligible.status_code == 200
+    assert eligible.json() == {
+        "target": "CKD",
+        "profile_coverage": {
+            "available_domains": ["demographics", "lifestyle"],
+            "unavailable_domains": [
+                "body_composition",
+                "blood_pressure",
+                "family_history",
+                "optional_laboratory",
+            ],
+            "eligible": True,
+            "calibration_pattern": "demographics|lifestyle",
+        },
+    }
+    assert ineligible.json()["profile_coverage"]["eligible"] is False
+    assert ineligible.json()["profile_coverage"]["coverage_recommendation"][
+        "missing_domains"
+    ] == ["lifestyle"]
+    assert unsupported.status_code == 422
 
 
 @pytest.mark.asyncio

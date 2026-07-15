@@ -26,7 +26,11 @@ from demo_profile import (
     confirm_profile,
     parse_feature_candidates,
 )
-from profile_matching import load_matching_release, match_confirmed_profile
+from profile_matching import (
+    evaluate_profile_coverage,
+    load_matching_release,
+    match_confirmed_profile,
+)
 from icd_keyword import is_icd_keyword_request, match_icd_keywords
 from fibrotic_contract import TARGETS
 from synthetic_example_profiles import get_synthetic_example_profile
@@ -136,6 +140,24 @@ class ProfileValidateRequest(BaseModel):
     candidates: list[FeatureCandidate] = Field(max_length=100)
 
 
+# The seven approved Comparison Targets, as a Pydantic-checkable literal. A
+# test asserts this stays equal to fibrotic_contract.TARGETS.
+ComparisonTarget = Literal[
+    "CKD",
+    "Cardiac_Fibrosis",
+    "MASH",
+    "Pulmonary_fibrosis",
+    "SSc_Connective_Tissue",
+    "Crohns_Disease",
+    "Fibrosis_of_Skin",
+]
+
+
+class ProfileCoverageRequest(BaseModel):
+    candidates: list[FeatureCandidate] = Field(max_length=100)
+    target: ComparisonTarget
+
+
 class ProfileDraftInput(BaseModel):
     state: str
     candidates: list[FeatureCandidate] = Field(max_length=100)
@@ -147,15 +169,7 @@ class ProfileConfirmRequest(BaseModel):
 
 class ProfileMatchRequest(BaseModel):
     confirmed_profile: ProfileDraftInput
-    target: Literal[
-        "CKD",
-        "Cardiac_Fibrosis",
-        "MASH",
-        "Pulmonary_fibrosis",
-        "SSc_Connective_Tissue",
-        "Crohns_Disease",
-        "Fibrosis_of_Skin",
-    ]
+    target: ComparisonTarget
 
 
 class SyntheticExampleProfileResponse(BaseModel):
@@ -285,6 +299,18 @@ async def profile_extract(req: ProfileExtractRequest, request: Request):
 async def profile_validate(req: ProfileValidateRequest, request: Request):
     enforce_profile_rate_limit(request)
     return build_profile_draft([candidate.model_dump() for candidate in req.candidates])
+
+
+@app.post("/profile/coverage")
+async def profile_coverage(
+    req: ProfileCoverageRequest,
+    request: Request,
+    release=Depends(get_profile_matching_release),
+):
+    enforce_profile_rate_limit(request)
+    draft = build_profile_draft([candidate.model_dump() for candidate in req.candidates])
+    coverage, _ = evaluate_profile_coverage(draft, req.target, release["calibration"])
+    return {"target": req.target, "profile_coverage": coverage}
 
 
 @app.post("/profile/confirm")
