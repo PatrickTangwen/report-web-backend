@@ -1,0 +1,86 @@
+{
+  "version": "2026-07-14.v1",
+  "review_status": "researcher-reviewed",
+  "source": "Hand-authored for demonstration only; not derived from Reference Patients or model output.",
+  "profiles": {
+    "CKD": {
+      "target": "CKD",
+      "candidates": [
+        { "field": "age", "raw_value": 61, "raw_unit": "years", "source_text": "age 61 years", "operation": "set" },
+        { "field": "sex", "raw_value": "female", "raw_unit": null, "source_text": "sex: female", "operation": "set" },
+        { "field": "height", "raw_value": 162, "raw_unit": "cm", "source_text": "height 162 cm", "operation": "set" },
+        { "field": "weight", "raw_value": 68, "raw_unit": "kg", "source_text": "weight 68 kg", "operation": "set" },
+        { "field": "creatinine", "raw_value": 110, "raw_unit": "umol/L", "source_text": "creatinine 110 umol/L", "operation": "set" },
+        { "field": "affected_relative", "raw_value": "yes", "raw_unit": null, "source_text": "affected relative: yes", "operation": "set" },
+        { "field": "smoking_status", "raw_value": "never", "raw_unit": null, "source_text": "smoking status: never", "operation": "set" }
+      ]
+    },
+    "Cardiac_Fibrosis": {
+      "target": "Cardiac_Fibrosis",
+      "candidates": [
+        { "field": "age", "raw_value": 57, "raw_unit": "years", "source_text": "age 57 years", "operation": "set" },
+        { "field": "sex", "raw_value": "male", "raw_unit": null, "source_text": "sex: male", "operation": "set" },
+        { "field": "blood_pressure", "raw_value": "138/88", "raw_unit": null, "source_text": "blood pressure 138/88", "operation": "set" },
+        { "field": "smoking_status", "raw_value": "former", "raw_unit": null, "source_text": "smoking status: former", "operation": "set" },
+        { "field": "height", "raw_value": 175, "raw_unit": "cm", "source_text": "height 175 cm", "operation": "set" },
+        { "field": "weight", "raw_value": 82, "raw_unit": "kg", "source_text": "weight 82 kg", "operation": "set" }
+      ]
+    },
+    "MASH": {
+      "target": "MASH",
+      "candidates": [
+        { "field": "age", "raw_value": 49, "raw_unit": "years", "source_text": "age 49 years", "operation": "set" },
+        { "field": "sex", "raw_value": "female", "raw_unit": null, "source_text": "sex: female", "operation": "set" },
+        { "field": "height", "raw_value": 160, "raw_unit": "cm", "source_text": "height 160 cm", "operation": "set" },
+        { "field": "weight", "raw_value": 78, "raw_unit": "kg", "source_text": "weight 78 kg", "operation": "set" },
+        { "field": "alcohol_frequency", "raw_value": "never", "raw_unit": null, "source_text": "alcohol frequency: never", "operation": "set" },
+        { "field": "affected_relative", "raw_value": "no", "raw_unit": null, "source_text": "affected relative: no", "operation": "set" }
+      ]
+    },
+    "Pulmonary_fibrosis": {
+      "target": "Pulmonary_fibrosis",
+      "candidates": [
+        { "field": "age", "raw_value": 64, "raw_unit": "years", "source_text": "age 64 years", "operation": "set" },
+        { "field": "sex", "raw_value": "male", "raw_unit": null, "source_text": "sex: male", "operation": "set" },
+        { "field": "smoking_status", "raw_value": "current", "raw_unit": null, "source_text": "smoking status: current", "operation": "set" },
+        { "field": "height", "raw_value": 170, "raw_unit": "cm", "source_text": "height 170 cm", "operation": "set" },
+        { "field": "weight", "raw_value": 75, "raw_unit": "kg", "source_text": "weight 75 kg", "operation": "set" },
+        { "field": "affected_relative", "raw_value": "yes", "raw_unit": null, "source_text": "affected relative: yes", "operation": "set" }
+      ]
+    },
+    "SSc_Connective_Tissue": {
+      "target": "SSc_Connective_Tissue",
+      "candidates": [
+        { "field": "age", "raw_value": 52, "raw_unit": "years", "source_text": "age 52 years", "operation": "set" },
+        { "field": "sex", "raw_value": "female", "raw_unit": null, "source_text": "sex: female", "operation": "set" },
+        { "field": "waist", "raw_value": 82, "raw_unit": "cm", "source_text": "waist circumference 82 cm", "operation": "set" },
+        { "field": "hip", "raw_value": 100, "raw_unit": "cm", "source_text": "hip circumference 100 cm", "operation": "set" },
+        { "field": "affected_relative", "raw_value": "no", "raw_unit": null, "source_text": "affected relative: no", "operation": "set" },
+        { "field": "alcohol_frequency", "raw_value": "never", "raw_unit": null, "source_text": "alcohol frequency: never", "operation": "set" }
+      ]
+    },
+    "Crohns_Disease": {
+      "target": "Crohns_Disease",
+      "candidates": [
+        { "field": "age", "raw_value": 34, "raw_unit": "years", "source_text": "age 34 years", "operation": "set" },
+        { "field": "sex", "raw_value": "male", "raw_unit": null, "source_text": "sex: male", "operation": "set" },
+        { "field": "height", "raw_value": 178, "raw_unit": "cm", "source_text": "height 178 cm", "operation": "set" },
+        { "field": "weight", "raw_value": 68, "raw_unit": "kg", "source_text": "weight 68 kg", "operation": "set" },
+        { "field": "alcohol_frequency", "raw_value": "once or twice a week", "raw_unit": null, "source_text": "alcohol frequency: once or twice a week", "operation": "set" },
+        { "field": "affected_relative", "raw_value": "no", "raw_unit": null, "source_text": "affected relative: no", "operation": "set" }
+      ]
+    },
+    "Fibrosis_of_Skin": {
+      "target": "Fibrosis_of_Skin",
+      "candidates": [
+        { "field": "age", "raw_value": 45, "raw_unit": "years", "source_text": "age 45 years", "operation": "set" },
+        { "field": "sex", "raw_value": "female", "raw_unit": null, "source_text": "sex: female", "operation": "set" },
+        { "field": "hba1c", "raw_value": 38, "raw_unit": "mmol/mol", "source_text": "HbA1c 38 mmol/mol", "operation": "set" },
+        { "field": "height", "raw_value": 165, "raw_unit": "cm", "source_text": "height 165 cm", "operation": "set" },
+        { "field": "weight", "raw_value": 64, "raw_unit": "kg", "source_text": "weight 64 kg", "operation": "set" },
+        { "field": "affected_relative", "raw_value": "yes", "raw_unit": null, "source_text": "affected relative: yes", "operation": "set" },
+        { "field": "smoking_status", "raw_value": "never", "raw_unit": null, "source_text": "smoking status: never", "operation": "set" }
+      ]
+    }
+  }
+}
